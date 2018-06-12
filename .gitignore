@@ -1,6 +1,6 @@
 *.pyc
 *~
 __pycache__
-myvenv
+ics
 /static
 .DS_Store
