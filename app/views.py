@@ -1,14 +1,20 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+from  treelib import Node, Tree
+import requests
+from bs4 import BeautifulSoup
+import re
 
-
-import random
-import time
-import datetime
-import json
-
-
-
-# 사료 구매 / 고기 구매
 def main(request):
-	return render(request, "main.html")
+	req = requests.get('https://capec.mitre.org/data/definitions/1000.html')
+	html = req.text
+	soup = BeautifulSoup(html, 'html.parser')
+	attack = soup.find_all("a")
+	content = dict()
+	for i in attack:
+		if re.match('1000.' , str(i.get('name'))):
+			content[i.get('name')] = i.contents
 
+	print(content)
+
+	context = {'data' : content}
+	return render(request, 'main.html', context)
