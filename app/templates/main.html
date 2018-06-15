@@ -6,3 +6,17 @@ CAPEC_MITRE
 	{{ v }}
 	<br>
 {% endfor %}
+
+{% load mptt_tags %}
+<ul>
+    {% recursetree vulners %}
+        <li>
+            {{ node.name }}
+            {% if not node.is_leaf_node %}
+                <ul class="children">
+                    {{ children }}
+                </ul>
+            {% endif %}
+        </li>
+    {% endrecursetree %}
+</ul>
