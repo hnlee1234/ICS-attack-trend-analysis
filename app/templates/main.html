@@ -1,17 +1,12 @@
 CAPEC_MITRE
 <br><br><br>
 
-{% for k,v in data.items %}
-	{{ k }}
-	{{ v }}
-	<br>
-{% endfor %}
-
 {% load mptt_tags %}
 <ul>
     {% recursetree vulners %}
         <li>
             {{ node.name }}
+      		({{ node.id }})
             {% if not node.is_leaf_node %}
                 <ul class="children">
                     {{ children }}

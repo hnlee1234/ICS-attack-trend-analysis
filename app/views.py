@@ -21,26 +21,32 @@ def main(request):
 		for key,val in content.items():
 			try:
 				#Normal cases
-				print(key[-3:])
-				new_node = Vulner.objects.create(id=str(key[-3:]), name=val[0], parent=Vulner.objects.get(id=str(key[-6:-3])))
+				parent = key[:4]
+				if parent == '1000':
+					key = key[4:]
+				else:
+					print("It is not started by 1000")
+					pass
+				ownid = key
+
+				while True:
+					if key[:3] == key[3:6]:
+						parent = key[:3]
+						key = key[6:]
+					elif key[:2] == key[2:4]:
+						parent = key[:2]
+						key = key[4:]
+					else:
+						ownid = key
+						break
+
+				print(parent, ownid)
+				new_node = Vulner.objects.create(id=ownid, name=val[0], parent=Vulner.objects.get(id=parent))
 				new_node.save()
-				#new_node = Vulner.objects.insert_node()
-			except:
-				try:
-					#'Root is 1000' cases
-					print(key[-3:])
-					new_node = Vulner.objects.create(id=str(key[-3:]), name=val[0], parent=Vulner.objects.get(id=str(key[0:4])))
-					new_node.save()
-				except:
-					try:
-						#'xx' cases (not '0xx')
-						print(key[-2:])
-						new_node = Vulner.objects.create(id='0'+str(key[-2:]), name=val[0], parent=Vulner.objects.get(id=str(key[-5:-2])))
-						new_node.save()
-					except Exception as e:	
-						print(e)
-						print(key[-3:] + "made some errors")
+			except Exception as e:	
+				print(e)
+				print(ownid + " made some errors")
 	
-	context = {'data' : content, 'vulners': Vulner.objects.all()}
+	context = {'vulners': Vulner.objects.all()}
 
 	return render(request, 'main.html', context)
