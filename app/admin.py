@@ -7,10 +7,10 @@ admin.site.register(Post)
 # Register your models here.
 
 class VulnerAdmin(tree_editor.TreeEditor):
-    fields = ['id', 'name', 'parent']
-    list_display = ["name", "actions_column", ]
-    search_fields = ('name', )
+    fields = ['id', 'name', 'severity', 'parent']
+    list_display = ["title", "id", "severity", "actions_column", ]
+    search_fields = ('id', )
  
-    mptt_level_indent = 15
+    mptt_level_indent = 30
  
 admin.site.register(Vulner, VulnerAdmin)

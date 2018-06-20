@@ -25,13 +25,15 @@ class Post(models.Model):
 class Vulner(MPTTModel):
 	id = models.CharField(max_length=50, unique=True, primary_key = True)
 	name = models.CharField(max_length=200)
+	severity = models.CharField(max_length=20, null=True, blank=True)
 	parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
+
 
 	class MPTTMeta:
 		order_insertion_by = ['id']
 
-
-
+	def __str__(self):
+		return self.name
 
 
 #feinCMS-------------------------------------------------------------------------------------------------------------
@@ -52,3 +54,5 @@ class Vulner(MPTTModel):
 		('default', _('default')),
 		('lightbox', _('lightbox')),
 	))
+#------------------------------------------------------------------------------------------------------------------
+
