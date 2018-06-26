@@ -26,18 +26,18 @@ No,Company,URL,Product/Service,Paper1,Paper2,relation level,Company division,sub
 25,Securicon,http://www.securicon.com/about-us,Security Assessments,http://www.securicon.com/services/security%20assessments,,Low,,,
 26,Securicon,http://www.securicon.com/about-us,SCADA Security Solutions Customized for Critical Infrastructure,http://www.securicon.com/industry_solution/utilities,,Medium,,,
 27,Securicon,http://www.securicon.com/about-us,Maintaining Secure Process Control Systems without Risk of Disruption,http://www.securicon.com/industry_solution/process-control,,Medium,,,
-28,Applied Risk,https://applied-risk.com/solutions/products/ics-cyber-security-awareness-training,ICS Cyber Security Awareness Training,AppliedRisk-Online_ICS-Cyber-Security-Awareness-Training.pdf,,High,Consulting,Training,
-29,Applied Risk,https://applied-risk.com/solutions/services/iot-security-assurance-services,IoT Security Assurance Services,AppliedRisk-IoT_Security_Assurance__Services.pdf,,High,Consulting,Assurance,
-30,Applied Risk,https://applied-risk.com/solutions/services/industrial-automation-and-control-systems-iacs-security,Industrial Automation and Control Systems (IACS) Security,AppliedRisk-Industrial_Cyber_Security_Services.pdf,,High,Consulting,Consulting,
-31,Applied Risk,https://applied-risk.com/solutions/services/icsscada-security-assessment-penetration-testing,ICS/SCADA Security Assessment & Penetration Testing,AppliedRisk-Industrial_Cyber_Security_Services.pdf,,High,Consulting,Assessment,
-32,Applied Risk,https://applied-risk.com/solutions/services/risk-and-vulnerability-assessment-rva,Risk and Vulnerability Assessment (RVA),AppliedRisk-Industrial_Cyber_Security_Services.pdf,,High,Consulting,Assessment,
-33,Applied Risk,https://applied-risk.com/solutions/services/embedded-security-assessment,Embedded Security Assessment,AppliedRisk-Industrial_Cyber_Security_Services.pdf,,High,Consulting,Assessment,
-34,Bayshore Networks,https://www.bayshorenetworks.com/solution/passive-monitoring,Passive Monitoring,Bayshore-Solutions_Guide_4.24.18.pdf,,High,Devices,Monitoring,
-35,Bayshore Networks,https://www.bayshorenetworks.com/solution/learns-adapts,Learns & Adapts,Bayshore-Solutions_Guide_4.24.18.pdf,,High,Devices,Policy,
-36,Bayshore Networks,https://www.bayshorenetworks.com/solution/alerts-protects,Alerts & Protects,Bayshore-Solutions_Guide_4.24.18.pdf,,High,Devices,Protection,
-37,Bayshore Networks,https://www.bayshorenetworks.com/solution/managed-remote-access,Managed Remote Access,Bayshore-Solutions_Guide_4.24.18.pdf,,Medium,Devices,Remote Access,
-38,Dragos,https://dragos.com/platform/index.html,Dragos Platform,Dragos-Platform_Data_Sheet.pdf,,High,Devices,Protection,
-39,Dragos,https://dragos.com/worldview/index.html,Dragos ICS WorldView,Dragos-WorldView.pdf,,High,Consulting,Monitoring(Global),
-40,Dragos,https://dragos.com/services.html,Dragos Incident Response,Dragos-Incident Response_v3.pdf,,High,Consulting,Response,
-41,Dragos,https://dragos.com/services.html,Dragos ThreatView,Dragos-ThreatView_v3.pdf,,High,Consulting,Assessment,
+28,Applied Risk,https://applied-risk.com/,ICS Cyber Security Awareness Training,https://applied-risk.com/solutions/products/ics-cyber-security-awareness-training,AppliedRisk-Online_ICS-Cyber-Security-Awareness-Training.pdf,High,Consulting,Training,
+29,Applied Risk,https://applied-risk.com/,IoT Security Assurance Services,https://applied-risk.com/solutions/services/iot-security-assurance-services,AppliedRisk-IoT_Security_Assurance__Services.pdf,High,Consulting,Assurance,
+30,Applied Risk,https://applied-risk.com/,Industrial Automation and Control Systems (IACS) Security,https://applied-risk.com/solutions/services/industrial-automation-and-control-systems-iacs-security,,High,Consulting,Consulting,AppliedRisk-Industrial_Cyber_Security_Services.pdf
+31,Applied Risk,https://applied-risk.com/,ICS/SCADA Security Assessment & Penetration Testing,https://applied-risk.com/solutions/services/icsscada-security-assessment-penetration-testing,,High,Consulting,Assessment,AppliedRisk-Industrial_Cyber_Security_Services.pdf
+32,Applied Risk,https://applied-risk.com/,Risk and Vulnerability Assessment (RVA),https://applied-risk.com/solutions/services/risk-and-vulnerability-assessment-rva,,High,Consulting,Assessment,AppliedRisk-Industrial_Cyber_Security_Services.pdf
+33,Applied Risk,https://applied-risk.com/,Embedded Security Assessment,https://applied-risk.com/solutions/services/embedded-security-assessment,,High,Consulting,Assessment,AppliedRisk-Industrial_Cyber_Security_Services.pdf
+34,Bayshore Networks,https://www.bayshorenetworks.com/,Passive Monitoring,https://www.bayshorenetworks.com/solution/passive-monitoring,,High,Devices,Monitoring,Bayshore-Solutions_Guide_4.24.18.pdf
+35,Bayshore Networks,https://www.bayshorenetworks.com/,Learns & Adapts,https://www.bayshorenetworks.com/solution/learns-adapts,,High,Devices,Policy,Bayshore-Solutions_Guide_4.24.18.pdf
+36,Bayshore Networks,https://www.bayshorenetworks.com/,Alerts & Protects,https://www.bayshorenetworks.com/solution/alerts-protects,,High,Devices,Protection,Bayshore-Solutions_Guide_4.24.18.pdf
+37,Bayshore Networks,https://www.bayshorenetworks.com/,Managed Remote Access,https://www.bayshorenetworks.com/solution/managed-remote-access,,Medium,Devices,Remote Access,Bayshore-Solutions_Guide_4.24.18.pdf
+38,Dragos,https://dragos.com/,Dragos Platform,Dragos-Platform_Data_Sheet.pdf,https://dragos.com/platform/index.html,High,Devices,Protection,
+39,Dragos,https://dragos.com/,Dragos ICS WorldView,Dragos-WorldView.pdf,https://dragos.com/worldview/index.html,High,Consulting,Monitoring(Global),
+40,Dragos,https://dragos.com/,Dragos Incident Response,Dragos-Incident Response_v3.pdf,https://dragos.com/services.html,High,Consulting,Response,
+41,Dragos,https://dragos.com/,Dragos ThreatView,Dragos-ThreatView_v3.pdf,https://dragos.com/services.html,High,Consulting,Assessment,
 42,mPrest,https://www.mprest.com/industries/security-hls,mPrest HLS Platform,mPrest-HLS-Brochure.pdf,mPrest-Critical-facilities-Facilities_protection.pdf,Medium,Devices,Protection,

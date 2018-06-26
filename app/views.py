@@ -2,7 +2,7 @@ from django.shortcuts import render
 import requests
 from bs4 import BeautifulSoup
 import re
-from app.models import Vulner, Company
+from app.models import Vulner, Company, Product
 #from .forms import VulnerModelForm
 import csv
 
@@ -22,7 +22,10 @@ def main(request):
 			csv_dict[l['ID']] = l
 
 	industry()
-#	print(csv_dict['99']['Severity'])
+	with open('log.txt','w') as logfile:
+		for i,j in csv_dict.items():
+			logfile.write(i+'\n')
+
 	#create attacks' list with rough id after crawling
 	for i in attack:
 		if re.match('1000.' , str(i.get('name'))):
@@ -52,21 +55,18 @@ def main(request):
 						ownid = key
 						break
 
-				ownseverity = csv_dict[ownid]['Severity']
+				if parent == str(1000):
+					Vulner.objects.update_or_create(id=ownid, name=val[0], severity = "", parent=Vulner.objects.get(id=parent))	
 
-				new_node = Vulner.objects.create(id=ownid, name=val[0], severity = ownseverity, parent=Vulner.objects.get(id=parent))
-				print(ownid + ": Created")
-				new_node.save()
+				else:
+					ownseverity = csv_dict[ownid]['Severity']
+					#print(parent, ownid)
+					Vulner.objects.update_or_create(id=ownid, name=val[0], severity = ownseverity, parent=Vulner.objects.get(id=parent))
+				
+				print(ownid + ": Update/Created")
 
 			except Exception as e:	
-				if str(e) == "UNIQUE constraint failed: app_vulner.id":
-					print(ownid, ": Duplicated")
-					existing_node = Vulner.objects.get(id=ownid)
-					#existing_node.id = ownid
-					existing_node.severity = ownseverity
-					existing_node.save()
-				else:
-					print(e)
+				print(e)
 				continue
 
 	context = {'vulners': Vulner.objects.all()}
@@ -77,19 +77,18 @@ def industry():
 	tmp_dict = dict()
 	
 	#read csv file
-	with open('app/list.csv', newline='', encoding = 'utf-8') as csvfile:
-		csvreader = csv.DictReader(csvfile)
+	with open('app/list.csv', newline='', encoding = 'utf-8') as csvfilei:
+		csvreaderi = csv.DictReader(csvfilei)
 		
-		for l in csvreader:
+		for l in csvreaderi:
 			tmp_dict[l['Company']] = l
 
-		for com in tmp_dict.keys():
+		for k,v in tmp_dict.items():
 			try:
-				new_node = Company.objects.create(name = com)
-				new_node.save()
+				Company.objects.update_or_create(name = k, url = v['URL'], parent=None)
+				Product.objects.update_or_create(name = v['Product/Service'], company = Company.objects.get(name=k),
+    				paper1 = v['Paper1'], paper2 = v['Paper2'], refer = v['reference'], relation_level = v['relation level'],
+    				main_division = v['Company division'], sub_division = v['subdivision'])
 			except Exception as e:
-				if str(e) == "UNIQUE constraint failed: app_Company.name":
-					print(com, ": Duplicated")
-				else:
-					print(e)
+				print(e)
 				continue
