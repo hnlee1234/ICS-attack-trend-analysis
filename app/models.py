@@ -6,6 +6,7 @@ from feincms.module.page.models import Page
 from feincms.contents import RichTextContent
 from feincms.module.medialibrary.contents import MediaFileContent
 
+'''
 class Post(models.Model):
 	"""docstring for Post"""
 	author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -20,7 +21,7 @@ class Post(models.Model):
 
 	def __str__(self):
 		return self.title
-
+'''
 # Create your models here.
 class Vulner(MPTTModel):
 	id = models.CharField(max_length=50, unique=True, primary_key = True)
@@ -56,3 +57,8 @@ class Vulner(MPTTModel):
 	))
 #------------------------------------------------------------------------------------------------------------------
 
+class Company(models.Model):
+	name = models.CharField(max_length = 50)
+
+	def __str__(self):
+		return self.name

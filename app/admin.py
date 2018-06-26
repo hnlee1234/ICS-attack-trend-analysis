@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Post, Vulner
+from .models import Vulner, Company
 from mptt.admin import MPTTModelAdmin
 from feincms.admin import tree_editor
 
-admin.site.register(Post)
+#admin.site.register(Post)
 # Register your models here.
 
 class VulnerAdmin(tree_editor.TreeEditor):
@@ -14,3 +14,4 @@ class VulnerAdmin(tree_editor.TreeEditor):
     mptt_level_indent = 30
  
 admin.site.register(Vulner, VulnerAdmin)
+admin.site.register(Company)

@@ -2,7 +2,7 @@ from django.shortcuts import render
 import requests
 from bs4 import BeautifulSoup
 import re
-from app.models import Vulner
+from app.models import Vulner, Company
 #from .forms import VulnerModelForm
 import csv
 
@@ -21,6 +21,7 @@ def main(request):
 		for l in csvreader:
 			csv_dict[l['ID']] = l
 
+	industry()
 #	print(csv_dict['99']['Severity'])
 	#create attacks' list with rough id after crawling
 	for i in attack:
@@ -64,8 +65,31 @@ def main(request):
 					#existing_node.id = ownid
 					existing_node.severity = ownseverity
 					existing_node.save()
+				else:
+					print(e)
 				continue
 
 	context = {'vulners': Vulner.objects.all()}
 
 	return render(request, 'main.html', context)
+
+def industry():
+	tmp_dict = dict()
+	
+	#read csv file
+	with open('app/list.csv', newline='', encoding = 'utf-8') as csvfile:
+		csvreader = csv.DictReader(csvfile)
+		
+		for l in csvreader:
+			tmp_dict[l['Company']] = l
+
+		for com in tmp_dict.keys():
+			try:
+				new_node = Company.objects.create(name = com)
+				new_node.save()
+			except Exception as e:
+				if str(e) == "UNIQUE constraint failed: app_Company.name":
+					print(com, ": Duplicated")
+				else:
+					print(e)
+				continue

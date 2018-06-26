@@ -1,0 +1,43 @@
+No,Company,URL,Product/Service,Paper1,Paper2,relation level,Company division,subdivision,reference
+1,FireEye,https://www.fireeye.kr/company/why-fireeye.html ,FireEye Helix,FireEye-Helix.pdf,,Medium,Devices,Monitoring,
+2,FireEye,https://www.fireeye.kr/company/why-fireeye.html ,FireEye Network Solution,FireEye-sb-network-security.pdf,FireEye-network-threat-prevention-platform.pdf,Medium,Devices,Protection,
+3,FireEye,https://www.fireeye.kr/company/why-fireeye.html ,FireEye SSL Block Appliance,FireEye-sb-ssl-intercept.pdf,,,,,
+4,FireEye,https://www.fireeye.kr/company/why-fireeye.html ,Threat Analysis Platform,FirEye-cb-fireeye-analytics.pdf,FireEye-threat-analytics-platform.pdf,,,,
+5,Nozomi,https://www.nozominetworks.com/company/about-us/,SCADAguardian,Nozomi-Networks-SG-Data-Sheet.pdf,,,,,Nozomi-Networks-SolutionBrief.pdf
+6,Nozomi,https://www.nozominetworks.com/company/about-us/,Central Management Console,Nozomi-Networks-CMC-Data-Sheet.pdf,,,,,Nozomi-Networks-SolutionBrief.pdf
+7,Nozomi,https://www.nozominetworks.com/company/about-us/,Solutions for MSSPs,Nozomi-Networks-MSSP-SolutionBrief.pdf,,,,,Nozomi-Networks-SolutionBrief.pdf
+8,Indegy,https://www.indegy.com/company/,Indegy Core Platform,https://www.indegy.com/solutions/,,,,,Indegy - Solution Brief.pdf
+9,Indegy,https://www.indegy.com/company/,Indegy Device Integrity,https://www.indegy.com/solutions/,,,,,Indegy - Solution Brief.pdf
+10,Indegy,https://www.indegy.com/company/,Indegy Sensors,https://www.indegy.com/solutions/,,,,,Indegy - Solution Brief.pdf
+11,Indegy,https://www.indegy.com/company/,Indegy Enterprise Management,https://www.indegy.com/solutions/,,,,,Indegy - Solution Brief.pdf
+12,Kaspersky,https://usa.kaspersky.com/enterprise-security/industrial,KICS,Kaspersky-KICS_solution_overview_A5_web.pdf,,High,,,
+13,Norton,https://www.symantec.com/solutions/industrial-control ,(I)CSP,Norton-embedded-security-critical-system-protection-en.pdf,,Low,,,Norton-symantec-secures-rockwell-en.pdf
+14,DarkTrace,https://www.darktrace.com/products/#darktrace-industrial,Darktrace Industrial Immune System,DarkTrace - ds-iis.pdf,,High,,,
+15,Skybox security,https://www.skyboxsecurity.com/solutions/scada-and-ics-network-security,Skybox-horizon,https://www.skyboxsecurity.com/products/skybox-horizon,,,,,Skybox_TB_OT_Network_Security.pdf
+16,Skybox security,https://www.skyboxsecurity.com/solutions/scada-and-ics-network-security,Skybox Vulnerability Control,https://www.skyboxsecurity.com/products/skybox-vulnerability-control,,,,,Skybox_TB_OT_Network_Security.pdf
+17,Skybox security,https://www.skyboxsecurity.com/solutions/scada-and-ics-network-security,Skybox Threat Manager,https://www.skyboxsecurity.com/products/skybox-threat-manager,,,,,Skybox_TB_OT_Network_Security.pdf
+18,Skybox security,https://www.skyboxsecurity.com/solutions/scada-and-ics-network-security,Skybox Network Assurance,https://www.skyboxsecurity.com/products/skybox-network-assurance,,,,,Skybox_TB_OT_Network_Security.pdf
+19,Veracity,https://veracity.io/,Cerebellum,Veracity-whitepaper.pdf,Veracity-protection-problem.pdf,,,,
+20,Security Matters,https://www.secmatters.com/product,SilentDefense,SecurityMatters-SilentDefense-solution-for-ICS-brief.pdf,SecurityMatters-SilentDefense-Datasheet.pdf,,,,
+21,Claroty,https://www.claroty.com/,RTD,Claroty-RealTimeThreatDetection(RTD).pdf,,,,,Claroty-ics-cybersecurity.pdf
+22,Claroty,https://www.claroty.com/,CRA,Claroty-ClarotyRemoteAccess(CRA)Datasheet.pdf,,,,,Claroty-ics-cybersecurity.pdf
+23,Claroty,https://www.claroty.com/,Enterprise Management Console,Claroty-Enterprisemanagmentcounsledatasheet-R10.pdf,,,,,Claroty-ics-cybersecurity.pdf
+24,Claroty,https://www.claroty.com/,Security Posture Analysis,Claroty-SecurityPostureAnalysisDataSheet.pdf,,,,,Claroty-ics-cybersecurity.pdf
+25,Securicon,http://www.securicon.com/about-us,Security Assessments,http://www.securicon.com/services/security%20assessments,,Low,,,
+26,Securicon,http://www.securicon.com/about-us,SCADA Security Solutions Customized for Critical Infrastructure,http://www.securicon.com/industry_solution/utilities,,Medium,,,
+27,Securicon,http://www.securicon.com/about-us,Maintaining Secure Process Control Systems without Risk of Disruption,http://www.securicon.com/industry_solution/process-control,,Medium,,,
+28,Applied Risk,https://applied-risk.com/solutions/products/ics-cyber-security-awareness-training,ICS Cyber Security Awareness Training,AppliedRisk-Online_ICS-Cyber-Security-Awareness-Training.pdf,,High,Consulting,Training,
+29,Applied Risk,https://applied-risk.com/solutions/services/iot-security-assurance-services,IoT Security Assurance Services,AppliedRisk-IoT_Security_Assurance__Services.pdf,,High,Consulting,Assurance,
+30,Applied Risk,https://applied-risk.com/solutions/services/industrial-automation-and-control-systems-iacs-security,Industrial Automation and Control Systems (IACS) Security,AppliedRisk-Industrial_Cyber_Security_Services.pdf,,High,Consulting,Consulting,
+31,Applied Risk,https://applied-risk.com/solutions/services/icsscada-security-assessment-penetration-testing,ICS/SCADA Security Assessment & Penetration Testing,AppliedRisk-Industrial_Cyber_Security_Services.pdf,,High,Consulting,Assessment,
+32,Applied Risk,https://applied-risk.com/solutions/services/risk-and-vulnerability-assessment-rva,Risk and Vulnerability Assessment (RVA),AppliedRisk-Industrial_Cyber_Security_Services.pdf,,High,Consulting,Assessment,
+33,Applied Risk,https://applied-risk.com/solutions/services/embedded-security-assessment,Embedded Security Assessment,AppliedRisk-Industrial_Cyber_Security_Services.pdf,,High,Consulting,Assessment,
+34,Bayshore Networks,https://www.bayshorenetworks.com/solution/passive-monitoring,Passive Monitoring,Bayshore-Solutions_Guide_4.24.18.pdf,,High,Devices,Monitoring,
+35,Bayshore Networks,https://www.bayshorenetworks.com/solution/learns-adapts,Learns & Adapts,Bayshore-Solutions_Guide_4.24.18.pdf,,High,Devices,Policy,
+36,Bayshore Networks,https://www.bayshorenetworks.com/solution/alerts-protects,Alerts & Protects,Bayshore-Solutions_Guide_4.24.18.pdf,,High,Devices,Protection,
+37,Bayshore Networks,https://www.bayshorenetworks.com/solution/managed-remote-access,Managed Remote Access,Bayshore-Solutions_Guide_4.24.18.pdf,,Medium,Devices,Remote Access,
+38,Dragos,https://dragos.com/platform/index.html,Dragos Platform,Dragos-Platform_Data_Sheet.pdf,,High,Devices,Protection,
+39,Dragos,https://dragos.com/worldview/index.html,Dragos ICS WorldView,Dragos-WorldView.pdf,,High,Consulting,Monitoring(Global),
+40,Dragos,https://dragos.com/services.html,Dragos Incident Response,Dragos-Incident Response_v3.pdf,,High,Consulting,Response,
+41,Dragos,https://dragos.com/services.html,Dragos ThreatView,Dragos-ThreatView_v3.pdf,,High,Consulting,Assessment,
+42,mPrest,https://www.mprest.com/industries/security-hls,mPrest HLS Platform,mPrest-HLS-Brochure.pdf,mPrest-Critical-facilities-Facilities_protection.pdf,Medium,Devices,Protection,
