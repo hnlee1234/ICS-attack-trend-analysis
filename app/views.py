@@ -81,14 +81,13 @@ def industry():
 		csvreaderi = csv.DictReader(csvfilei)
 		
 		for l in csvreaderi:
-			tmp_dict[l['Company']] = l
+			tmp_dict[l['Product/Service']] = l
 
 		for k,v in tmp_dict.items():
 			try:
-				Company.objects.update_or_create(name = k, url = v['URL'], parent=None)
-				Product.objects.update_or_create(name = v['Product/Service'], company = Company.objects.get(name=k),
-    				paper1 = v['Paper1'], paper2 = v['Paper2'], refer = v['reference'], relation_level = v['relation level'],
-    				main_division = v['Company division'], sub_division = v['subdivision'])
+				Company.objects.update_or_create(name = v['Company'], url = v['URL'], parent=None)
+				Product.objects.update_or_create(name = k, company = Company.objects.get(name=v['Company']), paper1 = v['Paper1'], paper2 = v['Paper2'], 
+					refer = v['reference'], relation_level = v['relation level'], main_division = v['Company division'], sub_division = v['subdivision'])
 			except Exception as e:
 				print(e)
 				continue

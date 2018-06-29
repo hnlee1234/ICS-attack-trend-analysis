@@ -9,7 +9,7 @@ from feincms.admin import tree_editor
 class VulnerAdmin(tree_editor.TreeEditor):
     fields = ['id', 'name', 'severity', 'parent']
     list_display = ["title", "id", "severity", "actions_column", ]
-    search_fields = ('id', )
+    search_fields = ('id', 'name')
  
     mptt_level_indent = 30
  
@@ -23,10 +23,10 @@ class ProductAdmin(admin.ModelAdmin):
     ordering = ('name',)
     fields = ['name', 'company', 'relation_level', 'main_division', 'sub_division', 'paper1', 'paper2', 'refer']
     # change_list_template = 'admin/product_change_list.html'
-    list_display = ('name', 'company', 'relation_level', 'main_division', 'sub_division')
-    search_fields = ['name']
+    list_display = ('company', 'relation_level', 'main_division', 'sub_division')
+    search_fields = ['name', 'sub_division']
  
-    list_filter = ('name',)
+    list_filter = ('company', 'sub_division')
  
  
 admin.site.register(Product, ProductAdmin)
