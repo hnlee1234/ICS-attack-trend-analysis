@@ -4,3 +4,4 @@ __pycache__
 ics
 /static
 .DS_Store
+db.sqlite3

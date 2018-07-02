@@ -22,9 +22,9 @@ def main(request):
 			csv_dict[l['ID']] = l
 
 	industry()
-	with open('log.txt','w') as logfile:
+	'''with open('log.txt','w') as logfile:
 		for i,j in csv_dict.items():
-			logfile.write(i+'\n')
+			logfile.write(i+'\n')'''
 
 	#create attacks' list with rough id after crawling
 	for i in attack:
