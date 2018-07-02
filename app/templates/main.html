@@ -1,13 +1,26 @@
+{% load mptt_tags %}
+
 CAPEC_MITRE
 <br><br><br>
 
-{% load mptt_tags %}
+<form action = '^create/' method="post">
+    <!--create라는 함수에 signal을 url경로를 포함하여 전달, 추후 urls.py와 views.py에서 처리해야함-->            
+    {% csrf_token %}
+        <button name="create" value="True">Create (ONLY for new crawling!!)</button>
+</form>
+<br>
 <ul>
     {% recursetree vulners %}
         <li>
-            {{ node.name }}
-      		({{ node.id }})
-      		{{ node.severity }}
+            {% if node.level <= 3 %}
+                <b>{{ node.name }}</b>
+              	<b>({{ node.id }})</b>
+              	<b>{{ node.severity }}</b>
+            {% else %}
+                {{ node.name }}
+                ({{ node.id }})
+                {{ node.severity }}
+            {% endif %}
             {% if not node.is_leaf_node %}
                 <ul class="children">
                     {{ children }}
