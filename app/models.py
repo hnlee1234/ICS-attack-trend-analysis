@@ -27,6 +27,7 @@ class Vulner(MPTTModel):
 	id = models.CharField(max_length=50, unique=True, primary_key = True)
 	name = models.CharField(max_length=200)
 	severity = models.CharField(max_length=20, null=True, blank=True)
+	link = models.CharField(max_length=200, blank=True, null=True)
 	parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
 
 

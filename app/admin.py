@@ -7,7 +7,7 @@ from feincms.admin import tree_editor
 # Register your models here.
 
 class VulnerAdmin(tree_editor.TreeEditor):
-    fields = ['id', 'name', 'severity', 'parent']
+    fields = ['id', 'name', 'severity', 'parent', 'link',]
     list_display = ["title", "id", "severity", "actions_column", ]
     search_fields = ('id', 'name')
  
