@@ -3,16 +3,19 @@
 CAPEC_MITRE
 <br><br><br>
 
+<!--
 <form action = '^create/' method="post">
-    <!--create라는 함수에 signal을 url경로를 포함하여 전달, 추후 urls.py와 views.py에서 처리해야함-->            
+    "create라는 함수에 signal을 url경로를 포함하여 전달, 추후 urls.py와 views.py에서 처리해야함"
     {% csrf_token %}
         <button name="create" value="True">Create (ONLY for new crawling!!)</button>
 </form>
+--!>
+<button onclick="window.location='products';">Products</button>
 <br>
 <ul>
     {% recursetree vulners %}
         <li>
-            {% if node.level <= 3 %}
+            {% if node.level <= 3 and node.id.isdigit or 'CATE' in node.id %}
                 <b>{{ node.name }}</b>
               	<b>({{ node.id }})</b>
               	<b>{{ node.severity }}</b>

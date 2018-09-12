@@ -12,6 +12,12 @@ def main(request):
 
 	return render(request, 'main.html', context)
 
+def products(request):
+	context = {'products' : Company.objects.all()}
+	
+	return render(request, 'products.html', context)
+
+
 def industry():
 	tmp_dict = dict()
 	
