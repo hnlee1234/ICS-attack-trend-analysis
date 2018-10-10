@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'feincms',
     'feincms.module.page',
     'feincms.module.medialibrary',
-
+    'django_tables2',
 ]
 
 MIDDLEWARE = [

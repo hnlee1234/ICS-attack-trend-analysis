@@ -7,8 +7,19 @@ from app.models import Vulner, Company, Product
 #from .forms import VulnerModelForm
 import csv
 
+
 def main(request):
-	context = {'vulners': Vulner.objects.all()}
+	countDict = {}
+	cnt = 0
+	for vulner in Vulner.objects.all():
+		for child in vulner.get_descendants():
+			if "-" in child.id:
+				cnt += 1
+		if cnt > 0:
+			countDict[vulner.name]=(cnt,vulner.level)
+			cnt = 0
+	
+	context = {'vulners': Vulner.objects.all(), 'counts' : countDict}
 
 	return render(request, 'main.html', context)
 
