@@ -1,5 +1,16 @@
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+{% load static %}
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+<script src = "https://d3js.org/d3.v3.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.2/nv.d3.min.js"></script> 
+<link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.2/nv.d3.min.css" type="text/css" />
 {% load mptt_tags %}
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+{% load nvd3_tags %}
+
+<head>
+	{% include_chart_jscss %}
+</head>
 
 CAPEC_MITRE
 <br><br><br>
@@ -14,41 +25,56 @@ CAPEC_MITRE
 <button onclick="window.location='products';">Products</button>
 <br>
 
+<div id = "container"></div>
+
+	<script src="https://code.highcharts.com/highcharts.src.js"></script>
+	{{ xdata.first }}<br>
+	{{ ydata }}<br>
+	{% for i in  dataLength %}
+		{{ xdata|get_at_index:forloop.counter0 }}
+	{% endfor %}
+	<script>
+		Highcharts.chart('container', {
+			chart : {
+				type : 'pie',
+			},
+			title : {
+				text : "Takeholders",
+			},
+			data: 
+			[
+			{% for i in dataLength %}
+				{
+					name : ' {{ xdata.i }} '
+					y : ' {{ ydata.i }} '
+				},
+			{% endfor %}
+			],
+		});
+	</script>
 
 <div class = "table-responsive">
-	<table class="table table-bordered">
-		<tr>
-			{% for category, count in counts.items %}
-				{% if count.1 == 0 %}
-					<th colspan = "70%">{{ category }}</th>
-					<td>{{ count.0 }}</td>
+	<table class = "table table-bordered">
+		{% recursetree vulners %}
+			{% for key,value in counts.items %}
+				{% if key == node.name %}
+					<tr>
+					<th>
+						{% for i in value.1 %}
+							{{"---"}}
+						{% endfor %}
+						{{ node.name }}
+					</th>
+					<td>{{ value.0 }}</td>
+					</tr>
 				{% endif %}
 			{% endfor %}
-		</tr>
-		<tr>
-			{% for category, count in counts.items %}
-				{% if count.1 == 1 %}
-					<th>{{ category }}</th>
-					<td>{{ count.0 }}</td>
-				{% endif %}
-			{% endfor %}
-		</tr>
-		<tr>
-			{% for category, count in counts.items %}
-				{% if count.1 == 2 %}
-					<th>{{ category }}</th>
-					<td>{{ count.0 }}</td>
-				{% endif %}
-			{% endfor %}
-		</tr>
-		<tr>
-			{% for category,count in counts.items %}
-				{% if count.1 > 2 %}
-					<th>{{ category }}</th>
-					<td>{{ count.0 }}</td>
-				{% endif %}
-			{% endfor %}		
-		</tr>
+			{% if not node.is_leaf_node %}
+				<tr id="node-{{ node.pk }}" class="children{% if node.level == 0 %} top_level{% endif %}">
+					{{ children }}
+				</tr>
+			{% endif %}
+		{% endrecursetree %}
 	</table>
 </div>
 

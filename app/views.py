@@ -16,10 +16,20 @@ def main(request):
 			if "-" in child.id:
 				cnt += 1
 		if cnt > 0:
-			countDict[vulner.name]=(cnt,vulner.level)
+			countDict[vulner.name]=(cnt,range(0,vulner.level))
 			cnt = 0
 	
-	context = {'vulners': Vulner.objects.all(), 'counts' : countDict}
+	#For pie graph
+	xdata = []
+	ydata = []
+
+	for vulner,value in countDict.items():
+		if len(value[1]) == 1:
+			xdata.append(vulner)
+			ydata.append(value[0])
+				
+
+	context = {'vulners': Vulner.objects.all(), 'counts' : countDict, 'xdata' : xdata, 'ydata' : ydata, 'dataLength' : range(len(xdata))}
 
 	return render(request, 'main.html', context)
 

@@ -5,3 +5,4 @@ Pillow==5.0.0
 requests==2.18.4
 beautifulsoup4==4.6.0.
 django-tables2==2.0.1
+django-nvd3==0.9.7

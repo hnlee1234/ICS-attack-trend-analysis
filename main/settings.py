@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'feincms.module.page',
     'feincms.module.medialibrary',
     'django_tables2',
+    'django_nvd3',
+    'djangobower',
+    'chartit',
 ]
 
 MIDDLEWARE = [
@@ -133,4 +136,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "bower_components"),
 ]
+
+STATICFILES_FINDERS = [
+    'djangobower.finders.BowerFinder',
+]
+BOWER_COMPONENTS_ROOT = '/srv/ICS-attack-trend-analysis/components'
+
+BOWER_INSTALLED_APPS = (
+    'd3#3.5.17',
+    'nvd3#1.7.1',
+)
