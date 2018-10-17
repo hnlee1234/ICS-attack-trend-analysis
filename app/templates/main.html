@@ -7,6 +7,7 @@
 <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.2/nv.d3.min.css" type="text/css" />
 {% load mptt_tags %}
 {% load nvd3_tags %}
+{% load extra_tags %}
 
 <head>
 	{% include_chart_jscss %}
@@ -27,31 +28,32 @@ CAPEC_MITRE
 
 <div id = "container"></div>
 
-	<script src="https://code.highcharts.com/highcharts.src.js"></script>
-	{{ xdata.first }}<br>
-	{{ ydata }}<br>
-	{% for i in  dataLength %}
-		{{ xdata|get_at_index:forloop.counter0 }}
-	{% endfor %}
-	<script>
-		Highcharts.chart('container', {
-			chart : {
-				type : 'pie',
-			},
-			title : {
-				text : "Takeholders",
-			},
-			data: 
-			[
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+<script>
+	Highcharts.chart('container', {
+		chart : {
+			type : 'pie',
+		},
+		title : {
+			text : "Takeholders",
+		},
+		series: 
+		[{
+		data:[
 			{% for i in dataLength %}
 				{
-					name : ' {{ xdata.i }} '
-					y : ' {{ ydata.i }} '
+					name: '{{ xdata|get_at_index:forloop.counter0 }}',
+					y: {{ ydata|get_at_index:forloop.counter0 }},
 				},
 			{% endfor %}
-			],
-		});
-	</script>
+		]
+		}],
+		center : [100, 80],
+		size : 100,
+		showInLegend : false,
+	
+	});
+</script>
 
 <div class = "table-responsive">
 	<table class = "table table-bordered">
